@@ -15,6 +15,7 @@ namespace StarLib
         internal const long TicksPerWeek = TicksPerDay * DaysPerWeek;
         internal const int DaysPerMonth = 4 * DaysPerWeek;
         internal const long TicksPerMonth = TicksPerDay * DaysPerMonth;
+        internal const long DaysPerYear = DaysPerMonth * 13;
 
         //struct data
         private BigInteger internalTicks;
