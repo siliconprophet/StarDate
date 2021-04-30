@@ -34,5 +34,31 @@ namespace StarLib
         {
             return year % 7 == 0;
         }
+
+        //Get properties
+
+        public Date Date
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public TimeOfDay TimeOfDay
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
