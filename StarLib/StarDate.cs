@@ -19,5 +19,11 @@ namespace StarLib
 
         //struct data
         private BigInteger internalTicks;
+
+        //Leap Year Calculations
+        public static bool isLeap(long year)
+        {
+            return year % 7 == 0;
+        }
     }
 }

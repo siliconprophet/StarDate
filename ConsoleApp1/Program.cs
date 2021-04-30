@@ -8,6 +8,11 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            int k = 1000;
+            long m = k * k;
+            long b = m * k;
+            long y = 14 * b + 14 * k;
+            Console.WriteLine(StarDate.isLeap(y));
         }
     }
 }
