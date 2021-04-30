@@ -14,22 +14,24 @@ namespace ConsoleApp1
             long y = 14 * b + 14 * k;
             Console.WriteLine(StarDate.isLeap(y));
             double t = 365.24219;
+            Console.WriteLine(t);
             double s = 365.25636;
-            double s7 = s * 7;
+            _ = s * 7;
+            Console.Write(7 * s);
+            Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer7Years);
-            Console.WriteLine(s7);
+            Console.Write(45 * s);
+            Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer45Years);
-            Console.WriteLine(s7 * 5);
+            Console.Write(140 * s);
+            Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer140Years);
-            double s140 = s * 140;
-            Console.WriteLine(s140);
-            //Console.WriteLine(StarDate.DaysPer700Years);
-            //Console.WriteLine(s * 700);
+            Console.Write(1400 * s);
+            Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer1400Years);
-            Console.WriteLine(s * 1400);
-            Console.WriteLine(t * 1400);
+            Console.Write(2800 * s);
+            Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer1400Years * 2);
-            Console.WriteLine(s * 1400 * 2);
         }
     }
 }
