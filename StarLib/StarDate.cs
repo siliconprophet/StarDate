@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Numerics;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace StarLib
 {
-    public struct StarDate
+    public struct StarDate : IComparable<StarDate>, IEquatable<StarDate>, IComparable, IFormattable, IConvertible, IComparable<DateTime>, IEquatable<DateTime>, IXmlSerializable
     {
         //time period data
         public const int TicksPerMillisecond = 10000;
@@ -26,7 +30,8 @@ namespace StarLib
         public const int DaysPerQuadrupleLeapYear = DaysPerTripleLeapYear + DaysPerWeek;
 
         //struct data
-        private BigInteger internalTicks;
+        private Date _date;
+        private TimeOfDay _time;
         private StarZone _timeZone;
 
         //Leap Year Calculations
@@ -35,30 +40,134 @@ namespace StarLib
             return year % 7 == 0;
         }
 
-        //Get properties
-
-        public Date Date
+        public int CompareTo(DateTime other)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
 
-        public TimeOfDay TimeOfDay
+        public int CompareTo(object obj)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
+        }
+
+        public int CompareTo(StarDate other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Equals(DateTime other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Equals(StarDate other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TypeCode GetTypeCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ToBoolean(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte ToByte(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public char ToChar(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DateTime ToDateTime(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public decimal ToDecimal(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double ToDouble(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public short ToInt16(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int ToInt32(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long ToInt64(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public sbyte ToSByte(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public float ToSingle(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToString(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ToType(Type conversionType, IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ushort ToUInt16(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public uint ToUInt32(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ulong ToUInt64(IFormatProvider provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        XmlSchema IXmlSerializable.GetSchema()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IXmlSerializable.ReadXml(XmlReader reader)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IXmlSerializable.WriteXml(XmlWriter writer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
