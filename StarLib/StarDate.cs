@@ -42,7 +42,7 @@ namespace StarLib
 
         public int CompareTo(DateTime other)
         {
-            throw new NotImplementedException();
+            return this.CompareTo(new StarDate(other));
         }
 
         public int CompareTo(object obj)
@@ -52,17 +52,17 @@ namespace StarLib
 
         public int CompareTo(StarDate other)
         {
-            throw new NotImplementedException();
+            return this.Ticks.CompareTo(other.Ticks);
         }
 
         public bool Equals(DateTime other)
         {
-            throw new NotImplementedException();
+            return this.CompareTo(other) == 0;
         }
 
         public bool Equals(StarDate other)
         {
-            throw new NotImplementedException();
+            return this.CompareTo(other) == 0;
         }
 
         public TypeCode GetTypeCode()
@@ -72,17 +72,17 @@ namespace StarLib
 
         public bool ToBoolean(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public byte ToByte(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public char ToChar(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public DateTime ToDateTime(IFormatProvider provider)
@@ -92,37 +92,37 @@ namespace StarLib
 
         public decimal ToDecimal(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public double ToDouble(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public short ToInt16(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public int ToInt32(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public long ToInt64(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public sbyte ToSByte(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public float ToSingle(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public string ToString(IFormatProvider provider)
@@ -142,12 +142,12 @@ namespace StarLib
 
         public ushort ToUInt16(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public uint ToUInt32(IFormatProvider provider)
         {
-            throw new NotImplementedException();
+            throw new InvalidCastException();
         }
 
         public ulong ToUInt64(IFormatProvider provider)
