@@ -32,6 +32,14 @@ namespace ConsoleApp1
             Console.Write(2800 * s);
             Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer1400Years * 2);
+            WriteYears(14000);
+        }
+
+        private static void WriteYears(int v)
+        {
+            Console.Write(v * 365.25636);
+            Console.Write(" ");
+            throw new NotImplementedException();
         }
     }
 }
