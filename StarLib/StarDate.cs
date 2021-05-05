@@ -34,6 +34,12 @@ namespace StarLib
         private TimeOfDay _time;
         private StarZone _timeZone;
 
+        public StarDate(DateTime other) : this()
+        {
+        }
+
+        public BigInteger Ticks { get; private set; }
+
         //Leap Year Calculations
         public static bool isLeap(long year)
         {

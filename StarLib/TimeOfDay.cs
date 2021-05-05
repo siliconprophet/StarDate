@@ -1,4 +1,4 @@
-﻿using StarLib.Parsing;
+﻿//using StarLib.Parsing;
 using System;
 using System.Diagnostics.Contracts;
 using System.Numerics;
@@ -8,15 +8,10 @@ namespace StarLib
     public struct TimeOfDay : IComparable<TimeOfDay>, IEquatable<TimeOfDay>, IComparable, IFormattable, IConvertible
     {
         // Number of 100ns _ticks per time unit
-        internal static Time MillisecondTime = new Time(10000);
         internal const int TicksPerMillisecond = 10000;
-        internal static Time SecondTime = MillisecondTime * 1000;
         internal const int TicksPerSecond = TicksPerMillisecond * 1000;
-        internal static Time MinuteTime = SecondTime * 60;
         internal const long TicksPerMinute = TicksPerSecond * 60;
-        internal static Time HourTime = MinuteTime * 60;
         internal const long TicksPerHour = TicksPerMinute * 60;
-        public static Time DayTime = HourTime * 24;
         internal const long TicksPerDay = TicksPerHour * 24;
         // Number of milliseconds per time unit
         private const int MillisPerSecond = 1000;
@@ -493,91 +488,6 @@ namespace StarLib
             return (ulong)Ticks;
         }
 
-        /// <summary>
-        /// Parsing
-        /// </summary>
-        /// 
-
-        // Constructs a TimeOfDay from a string. The string must specify a
-        // date and optionally a time in a culture-specific or universal format.
-        // Leading and trailing whitespace characters are allowed.
-        //
-        public static TimeOfDay Parse(String s)
-        {
-            return (TimeOfDayParse.Parse(s, StarCulture.CurrentCulture, StarDateStyles.None));
-        }
-
-        // Constructs a TimeOfDay from a string. The string must specify a
-        // date and optionally a time in a culture-specific or universal format.
-        // Leading and trailing whitespace characters are allowed.
-        //
-        public static TimeOfDay Parse(String s, IFormatProvider provider)
-        {
-            return (TimeOfDayParse.Parse(s, StarCulture.GetInstance(provider), StarDateStyles.None));
-        }
-
-        public static TimeOfDay Parse(String s, IFormatProvider provider, StarDateStyles styles)
-        {
-            StarCulture.ValidateStyles(styles, "styles");
-            return (TimeOfDayParse.Parse(s, StarCulture.GetInstance(provider), styles));
-        }
-
-        // Constructs a TimeOfDay from a string. The string must specify a
-        // date and optionally a time in a culture-specific or universal format.
-        // Leading and trailing whitespace characters are allowed.
-        //
-        public static TimeOfDay ParseExact(String s, String format)
-        {
-            return TimeOfDayParse.ParseExact(s, format);
-        }
-
-        // Constructs a TimeOfDay from a string. The string must specify a
-        // date and optionally a time in a culture-specific or universal format.
-        // Leading and trailing whitespace characters are allowed.
-        //
-        public static TimeOfDay ParseExact(String s, String format, IFormatProvider provider)
-        {
-            return (TimeOfDayParse.ParseExact(s, format, StarCulture.GetInstance(provider), StarDateStyles.None));
-        }
-
-        // Constructs a TimeOfDay from a string. The string must specify a
-        // date and optionally a time in a culture-specific or universal format.
-        // Leading and trailing whitespace characters are allowed.
-        //
-        public static TimeOfDay ParseExact(String s, String format, IFormatProvider provider, StarDateStyles style)
-        {
-            StarCulture.ValidateStyles(style, "style");
-            return (TimeOfDayParse.ParseExact(s, format, StarCulture.GetInstance(provider), style));
-        }
-
-        public static TimeOfDay ParseExact(String s, String[] formats, IFormatProvider provider, StarDateStyles style)
-        {
-            StarCulture.ValidateStyles(style, "style");
-            return TimeOfDayParse.ParseExactMultiple(s, formats, StarCulture.GetInstance(provider), style);
-        }
-
-        public static Boolean TryParse(String s, out TimeOfDay result)
-        {
-            return TimeOfDayParse.TryParse(s, StarCulture.CurrentCulture, StarDateStyles.None, out result);
-        }
-
-        public static Boolean TryParse(String s, IFormatProvider provider, StarDateStyles styles, out TimeOfDay result)
-        {
-            StarCulture.ValidateStyles(styles, "styles");
-            return TimeOfDayParse.TryParse(s, StarCulture.GetInstance(provider), styles, out result);
-        }
-
-        public static Boolean TryParseExact(String s, String format, IFormatProvider provider, StarDateStyles style, out TimeOfDay result)
-        {
-            StarCulture.ValidateStyles(style, "style");
-            return TimeOfDayParse.TryParseExact(s, format, StarCulture.GetInstance(provider), style, out result);
-        }
-
-        public static Boolean TryParseExact(String s, String[] formats, IFormatProvider provider, StarDateStyles style, out TimeOfDay result)
-        {
-            StarCulture.ValidateStyles(style, "style");
-            return TimeOfDayParse.TryParseExactMultiple(s, formats, StarCulture.GetInstance(provider), style, out result);
-        }
 
         public override bool Equals(object obj)
         {
