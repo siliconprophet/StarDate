@@ -20,7 +20,7 @@ namespace ConsoleApp1
             Console.Write(7 * s);
             Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer7Years);
-            Console.Write(45 * s);
+            Console.Write(35 * s);
             Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer35Years);
             Console.Write(140 * s);
