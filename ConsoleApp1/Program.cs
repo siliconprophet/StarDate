@@ -33,13 +33,14 @@ namespace ConsoleApp1
             Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer1400Years * 2);
             WriteYears(14000);
+            WriteYears(28000);
         }
 
         private static void WriteYears(int v)
         {
             Console.Write(v * 365.25636);
             Console.Write(" ");
-            throw new NotImplementedException();
+            Console.WriteLine(v / 1400 * StarDate.DaysPer1400Years /*+ v / 1400 * StarDate.DaysPer140Years + v / 35 * StarDate.DaysPer35Years + v / 7 * StarDate.DaysPer7Years*/);
         }
     }
 }
