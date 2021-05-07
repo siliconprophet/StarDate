@@ -10,9 +10,9 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             int i = 0;
-            while (i < 14000)
+            while (i <= 14000)
             {
-                Console.WriteLine(i++ * 8 * 140);
+                Console.WriteLine(StarDate.leapLevel(i++));
             }
         }
     }
