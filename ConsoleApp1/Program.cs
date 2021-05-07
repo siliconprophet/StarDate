@@ -5,6 +5,8 @@ namespace ConsoleApp1
 {
     class Program
     {
+        private static double sid = 365.25636;
+        private static double trop = 365.24219;
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -23,17 +25,25 @@ namespace ConsoleApp1
             Console.Write(35 * s);
             Console.Write(" ");
             Console.WriteLine(StarDate.DaysPer35Years);
-            Console.Write(140 * s);
-            Console.Write(" ");
-            Console.WriteLine(StarDate.DaysPer140Years);
-            Console.Write(1400 * s);
-            Console.Write(" ");
-            Console.WriteLine(StarDate.DaysPer1400Years);
-            Console.Write(2800 * s);
-            Console.Write(" ");
-            Console.WriteLine(StarDate.DaysPer1400Years * 2);
-            WriteYears(14000);
-            WriteYears(28000);
+            int i = 1;
+            while (i < 100)
+            {
+                //Console.Write(i);
+                //Console.Write(" ");
+                Write140(i);
+                i++;
+            }
+        }
+
+        private static void Write140(int v)
+        {
+            double t = trop * 140 * v;
+            double y = StarDate.DaysPer140Years * v;
+            double s = sid * 140 * v;
+            Console.WriteLine(v);
+            //Console.WriteLine(v * 140 + " " + v * 140 + " " + t + " " + y + " " + s);
+            //Console.WriteLine((y - t) + " " + (s - y));
+            Console.WriteLine((y - t) / 7 + " " + (s - y) / 7);
         }
 
         private static void WriteYears(int v)
