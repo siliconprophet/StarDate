@@ -20,15 +20,16 @@ namespace StarLib
         public const int DaysPerMonth = 4 * DaysPerWeek;
         public const long TicksPerMonth = TicksPerDay * DaysPerMonth;
         public const int DaysPerYear = DaysPerMonth * 13;
-        public const int DaysPer7Years = DaysPerYear * 7 + DaysPerWeek;
+        public const int DaysPer7Years = DaysPerYear * 7 + DaysPerWeek; //2555
         public const int DaysPerLeapYear = DaysPerYear + DaysPerWeek;
         public const int DaysPer35Years = DaysPer7Years * 5 + DaysPerWeek;
         public const int DaysPerDoubleLeapYear = DaysPerLeapYear + DaysPerWeek;
         public const int DaysPer140Years = DaysPer35Years * 4 + DaysPerWeek;
         public const int DaysPerTripleLeapYear = DaysPerDoubleLeapYear + DaysPerWeek;
-        public const int DaysPer700Years = DaysPer140Years * 5 + DaysPerWeek;
-        public const int DaysPerQuadrupleLeapYear = DaysPerTripleLeapYear + DaysPerWeek;
-        public const long DaysPer14000Years = 5113591; //rounding slightly up from 14000 sidereal years
+        public const int WeeksPer140Years = DaysPer140Years / 7; //7305
+        //13 additional leap weeks will be added in 100 iterations of 140 years to get 730513 weeks per 14000 Years
+        public const long DaysPer14000Years = 5113591; //rounding slightly up from 14000 sidereal years 5113589.04 days
+        public const long WeeksPer14000Years = DaysPer14000Years / 7; //730513
         public const long DaysToManu = DaysPer14000Years * 1000000;
 
         //struct data
