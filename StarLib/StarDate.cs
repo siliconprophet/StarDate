@@ -28,6 +28,7 @@ namespace StarLib
         public const int DaysPerTripleLeapYear = DaysPerDoubleLeapYear + DaysPerWeek;
         public const int WeeksPer140Years = DaysPer140Years / 7; //7305
         //13 additional leap weeks will be added in 100 iterations of 140 years to get 730513 weeks per 14000 Years
+        //12 cycles of 8 cycles of 140 years has a quadruple leap year, plus an irregular 4 x 140 cycle at the end
         public const long DaysPer14000Years = 5113591; //rounding slightly up from 14000 sidereal years 5113589.04 days
         public const long WeeksPer14000Years = DaysPer14000Years / 7; //730513
         public const long DaysToManu = DaysPer14000Years * 1000000;
@@ -44,9 +45,31 @@ namespace StarLib
         public BigInteger Ticks { get; private set; }
 
         //Leap Year Calculations
-        public static bool isLeap(long year)
+        public static int leapLevel(long year)
         {
-            return year % 7 == 0;
+            if(year % 7 != 0)
+            {
+                return 0;
+            }
+            else if (year % 35 != 0)
+            {
+                return 1;
+            }
+            else if (year % 140 != 0)
+            {
+                return 2;
+            }
+            year %= 14000;
+            int CXLannum = (int)(year / 140);
+            if (CXLannum % 8 == 0)
+            {
+                return 4;
+            }
+            else
+            {
+                return 3;
+            }
+            throw new NotImplementedException();
         }
 
         public int CompareTo(DateTime other)
