@@ -9,7 +9,11 @@ namespace ConsoleApp1
         private static double trop = 365.24219;
         static void Main(string[] args)
         {
-            Console.WriteLine(StarDate.DaysPer140Years / 7);
+            int i = 0;
+            while (i < 14000)
+            {
+                Console.WriteLine(i++ * 8 * 140);
+            }
         }
     }
 }
