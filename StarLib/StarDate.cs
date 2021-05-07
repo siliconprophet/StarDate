@@ -28,7 +28,8 @@ namespace StarLib
         public const int DaysPerTripleLeapYear = DaysPerDoubleLeapYear + DaysPerWeek;
         public const int DaysPer700Years = DaysPer140Years * 5 + DaysPerWeek;
         public const int DaysPerQuadrupleLeapYear = DaysPerTripleLeapYear + DaysPerWeek;
-        public const int DaysPer14000Years = 5113591; //rounding slightly up from 14000 sidereal years
+        public const long DaysPer14000Years = 5113591; //rounding slightly up from 14000 sidereal years
+        public const long DaysToManu = DaysPer14000Years * 1000000;
 
         //struct data
         private Date _date;
